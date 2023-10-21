@@ -1,0 +1,137 @@
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Reset margins */
+* {
+    margin: 0;
+  }
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make from elements easier to work with */
+
+button,
+select {
+  font: inherit;
+}
+/* Word wrapping */
+p, h1, h2, h3, h4, h5, h6 
+{
+    overflow-wrap: break-word;
+  }
+
+  /* Font smoothing */
+body {
+    -webkit-font-smoothing: antialiased;
+  }
+body{
+    background-color: #212121;
+    color: beige;
+    height: 100vh;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    border: 1px salmon solid;
+}
+
+/* container */
+
+.container{
+    border: 1px solid rgb(0, 255, 21);
+    max-width: 80ch;
+    height: auto;
+    display: grid;
+    /* grid-template-columns: repeat(4,1fr); */
+    /* grid-template-rows: repeat(4,1fr); */
+    grid-template-columns: 1fr 2fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    /* grid-template-rows: min-content 2fr min-content; */
+    /* grid-template-rows:[row1-start] 25% [row1-end] 100px [third-line] 1 [last-line]; */
+    /* grid-template-rows: 30% 4fr 2fr; */
+    grid-template-rows: 1fr 2fr 28%;
+    
+
+    /* overflow: hidden; */
+    /* padding: ; */
+}
+
+#topic{
+    /* grid-area: 2/; */
+    /* text-align: center; */
+    background-color: brown;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align:center;
+    padding: 0.75rem;
+    text-transform: capitalize;
+    
+}
+
+/* #user-img{
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1/4;
+    height: 12rem;
+    width: ;
+} */
+.img{
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 1;
+    grid-row: 2/4;
+    background-image: url('https://randomuser.me/api/portraits/men/6.jpg');
+    /* background-image: url('https://randomuser.me/api/portraits/women/87.jpg'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Resize the background image to cover the entire container */
+    border-radius: 100;
+}
+
+
+.text{
+    background-color: cadetblue;
+    grid-column: 2/4;
+    grid-row: 2/3;
+    padding: 1.2rem;
+}
+.user-description{
+    background-color: burlywood;
+    grid-column: 2/4;
+    padding: 0.5rem;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-transform: capitalize;
+    
+}
+#refresh{
+    position: absolute;
+    /* margin: 0 auto; */
+    left: 42%;
+    top: 2.2rem;
+    border: 1px solid yellowgreen;
+    padding: 0.4rem;
+    background-color: yellowgreen;
+    border-radius: 20%;
+
+
+}
+
