@@ -8,8 +8,8 @@
 </head>
 <body >
     <figure class="container">
-        <h3 id="topic">advice # wisdom</h3>
-        <div class="img">
+        <h3 id="topic">advice <span id="tag"></span></h3>
+        <div class="img" >
             <!-- <img id="user-img" src="https://randomuser.me/api/portraits/men/6.jpg" alt="" srcset=""> -->
         </div>
         
@@ -17,7 +17,7 @@
 
         
             <blockquote class="text">
-                <p class="advice">
+                <p class="advice" id="advice">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, nulla.
                 </p>
             </blockquote>
@@ -25,7 +25,7 @@
                 <p>
                     <span id="first-name">First name</span>  
                     <span id="last-name">last name</span> 
-                    <br> <span id="location">location</span>
+                    <br> <span id="state">State, </span><span id="country">country</span>
                 </p>
                 
                 
@@ -35,6 +35,6 @@
             </figcaption>
         
     </figure>
-    
+    <script src="./api.js"></script>
 </body>
 </html>
