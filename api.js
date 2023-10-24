@@ -22,21 +22,11 @@ const countryEl = document.querySelector("#country")
 
 const imgDiv = document.querySelector(".img")
 
-// fetch("")
 
-// fetch('https://randomuser.me/api/').then((response)=>{
-//     let data = response.json()
-//     // console.log(data);
-//     return data
-// }).then((data)=>{
-//     console.log(data);
-// })
-// .catch((err)=>{console.log(`error `,err);}).finally(()=>{
-//     console.log(`this is response fetch`);
-// })
 
 function apiCall(){
 
+    
     // random user api
     fetch(userApiUrl)
     .then((response)=>{
@@ -84,14 +74,10 @@ function apiCall(){
         // console.log(userDetail.get("userNameDetail").get("last"));
         const state=userDetail.get("locationDetail").get("state");
         const country=userDetail.get("locationDetail").get("country");
-        // console.log(userDetail.get("locationDetail").get("country"));
-        // console.log(country);
+        
 
         // name
-        // firstNameEl.textContent =`${firstName}`
-        // lastNameEl.textContent =`${lastName}`
-        //location
-        // locationEl.textContent = `${state}, ${country}`
+        
         // closer
         function userDetailPrint(element,value) {
             
@@ -100,14 +86,15 @@ function apiCall(){
             }
         }
 
-        let printAtDom = userDetailPrint(firstNameEl,firstName)
-        printAtDom(firstNameEl,firstName)
-        printAtDom = userDetailPrint(lastNameEl,lastName)
-        printAtDom(lastNameEl,lastName)
-        printAtDom = userDetailPrint(stateEl,state)
-        printAtDom(stateEl,state)
-        printAtDom = userDetailPrint(countryEl,country)
-        printAtDom(countryEl,country)
+        const printFirstName = userDetailPrint(firstNameEl,firstName)
+        const printLastName = userDetailPrint(lastNameEl,lastName)
+        const printState = userDetailPrint(stateEl,state)
+        const printCountry = userDetailPrint(countryEl,country)
+
+        printFirstName()
+        printLastName()
+        printState()
+        printCountry()
 
 
         //user pic
@@ -136,20 +123,17 @@ function apiCall(){
     })
     .then((data)=>{
 
-        // console.log(data[0])
-        // console.log(data[0].content)
-        // console.log(data[0].tags)
 
         quoteDetail.set("quote",data[0].content)
         quoteDetail.set("tags",data[0].tags)
 
-        // console.log((quoteDetail.get("tags"))[1]);
+        
 
         // tag
-        // console.log(quoteDetail);
+        
+        tagEl.textContent=``
         tagArr = quoteDetail.get("tags")
-        // console.log(quoteDetail.get("tags"));
-        // console.log(tagArr.length);
+        
         if (tagArr.length > 0) {
 
             tagArr.forEach(element => {
@@ -171,6 +155,15 @@ function apiCall(){
     
 
 }
+document.querySelector("#refresh").addEventListener('click',()=>{
+    
+    
+    console.log(quoteDetail);
+    userDetail.clear()
+    quoteDetail.clear()
+
+    apiCall()
+},false)
 apiCall()
 
 

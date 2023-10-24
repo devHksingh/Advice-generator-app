@@ -45,35 +45,28 @@ body{
     
     justify-content: center;
     align-items: center;
-    border: 1px salmon solid;
+    
 }
 
 /* container */
 
 .container{
-    border: 1px solid rgb(0, 255, 21);
+   
     max-width: 90ch;
-    /* height: auto; */
-    /* max-height:9000px; */
+    
     display: grid;
-    /* grid-template-columns: repeat(4,1fr); */
-    /* grid-template-rows: repeat(4,1fr); */
+    
     grid-template-columns: 1fr 2fr 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr; */
-    /* grid-template-rows: min-content 2fr min-content; */
-    /* grid-template-rows:[row1-start] 25% [row1-end] 100px [third-line] 1 [last-line]; */
-    /* grid-template-rows: 30% 4fr 2fr; */
+    
     grid-template-rows: 1fr 2fr 28%;
     
-
-    /* overflow: hidden; */
-    /* padding: ; */
+    border: 1px slateblue solid;
+    
 }
 
 #topic{
-    /* grid-area: 2/; */
-    /* text-align: center; */
-    background-color: brown;
+   
+    
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -84,21 +77,12 @@ body{
     
 }
 
-/* #user-img{
-    background-color: blue;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row: 1/4;
-    height: 12rem;
-    width: ;
-} */
 .img{
     /* background-color: blue; */
     grid-column-start: 2;
     grid-column-end: 1;
     grid-row: 2/4;
-    /* background-image: url('https://randomuser.me/api/portraits/men/6.jpg'); */
-    /* background-image: url('https://randomuser.me/api/portraits/women/87.jpg'); */
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -107,14 +91,14 @@ body{
 
 
 .text{
-    background-color: cadetblue;
+    
     grid-column: 2/4;
     grid-row: 2/3;
     padding: 1.8rem;
 
 }
 .user-description{
-    background-color: burlywood;
+    
     grid-column: 2/4;
     padding: 0.5rem;
     padding-left: 1.2rem;
@@ -122,18 +106,28 @@ body{
     flex-direction: column;
     position: relative;
     text-transform: capitalize;
+    border: 1px solid brown;
     
 }
 #refresh{
     position: absolute;
-    /* margin: 0 auto; */
-    left: 50%;
-    top: 2.2rem;
+    margin: 0 auto;
+    left: 40%;
+    top: 4rem;
     border: 1px solid yellowgreen;
-    padding: 0.4rem;
+    padding: 0.2rem;
     background-color: yellowgreen;
     border-radius: 20%;
 
+    align-self: self-start;
+    order: 1;
 
+
+}
+
+
+#refresh:hover{
+    border: 1px solid yellowgreen;
+    box-shadow: 0 0 10px 1px yellowgreen;
 }
 
