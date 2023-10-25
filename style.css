@@ -1,3 +1,11 @@
+:root {
+    --grayish-blue: hsl(217, 19%, 38%);
+    --Dark-grayish-blue: hsl(217, 19%, 24%);
+    --Dark-blue: hsl(218, 23%, 16%);
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-green: hsl(150, 100%, 66%);
+  }
+
 /* ------------------- */
 /* Reset               */
 /* ------------------- */
@@ -45,6 +53,8 @@ body{
     
     justify-content: center;
     align-items: center;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--Dark-blue);
     
 }
 
@@ -52,7 +62,7 @@ body{
 
 .container{
    
-    max-width: 90ch;
+    max-width: 80ch;
     
     display: grid;
     
@@ -60,7 +70,9 @@ body{
     
     grid-template-rows: 1fr 2fr 28%;
     
-    border: 1px slateblue solid;
+    /* border: 1px slateblue solid; */
+    background-color: var(--Dark-blue);
+    border-radius: 4rem;
     
 }
 
@@ -74,6 +86,7 @@ body{
     text-align:center;
     padding: 0.75rem;
     text-transform: capitalize;
+    /* border: 1px solid burlywood; */
     
 }
 
@@ -81,12 +94,18 @@ body{
     /* background-color: blue; */
     grid-column-start: 2;
     grid-column-end: 1;
-    grid-row: 2/4;
-    
+    grid-row: 2/3;
+    padding: 1.5rem;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; /* Resize the background image to cover the entire container */
-    border-radius: 100;
+    background-position: right;
+    background-size:contain;
+    /* background-size: cover; Resize the background image to cover the entire container */
+    border-radius: 1em;
+    /* border: 1px solid red; */
+    /* width:max-content */
+    /* max-width: 10em; */
+    margin-left: 1em;
+    
 }
 
 
@@ -101,12 +120,13 @@ body{
     
     grid-column: 2/4;
     padding: 0.5rem;
-    padding-left: 1.2rem;
+    padding-left: 0;
     display: flex;
     flex-direction: column;
     position: relative;
     text-transform: capitalize;
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
+    padding-left: 1.6rem;
     
 }
 #refresh{
@@ -114,9 +134,9 @@ body{
     margin: 0 auto;
     left: 40%;
     top: 4rem;
-    border: 1px solid yellowgreen;
+    border: 1px solid var(--Neon-green);
     padding: 0.2rem;
-    background-color: yellowgreen;
+    background-color: var(--Neon-green);
     border-radius: 20%;
 
     align-self: self-start;
@@ -127,7 +147,11 @@ body{
 
 
 #refresh:hover{
-    border: 1px solid yellowgreen;
-    box-shadow: 0 0 10px 1px yellowgreen;
+    border: 1px solid var(--Neon-green);
+    box-shadow: 0 0 10px 1px var(--Neon-green);
 }
 
+#topic,
+#tag{
+    color: var(--Neon-green);
+}

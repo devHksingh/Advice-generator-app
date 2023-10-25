@@ -21,6 +21,7 @@ const stateEl = document.querySelector("#state")
 const countryEl = document.querySelector("#country")
 
 const imgDiv = document.querySelector(".img")
+const refreshBtn =document.querySelector("#refresh")
 
 
 
@@ -167,6 +168,35 @@ document.querySelector("#refresh").addEventListener('click',()=>{
 apiCall()
 
 
+function setDeviceBackground(){
+    const screenWidth = window.innerWidth;
+    const bodyEl = document.querySelector('body');
 
+    if (screenWidth <= 768) {
+        //Mobile device background
+    
+        bodyEl.style.backgroundImage = 'url("./img/background-destination-mobile.jpg")'
+        bodyEl.style.backgroundRepeat='no-repeat'
+        bodyEl.style.backgroundSize='cover'
+        refreshBtn.style.left = '25%';
+    } else if(screenWidth <= 1024) {
+        //Tablet device background
+    
+        bodyEl.style.backgroundImage = 'url("./img/background-destination-tablet.jpg")'
+        bodyEl.style.backgroundRepeat='no-repeat'
+        bodyEl.style.backgroundSize='cover'
+    }else{
+        //Tablet device background
+        bodyEl.style.backgroundImage = 'url("./img/background-destination-desktop.jpg")'
+        bodyEl.style.backgroundRepeat='no-repeat'
+        bodyEl.style.backgroundSize='cover'
+    }
+
+
+}
+
+setDeviceBackground()
+
+window.addEventListener('resize',setDeviceBackground)
 
 
